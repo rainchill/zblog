@@ -1,0 +1,54 @@
+.glass-effect {
+    backdrop-filter: blur(10px);
+    /* 背景模糊效果 */
+    background: rgba(255, 255, 255, 0.3);
+    /* 半透明背景 */
+    /* 圆角 */
+    /* border-radius: 10px; */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* 边框 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* 阴影 */
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    /* 平滑过渡效果 */
+    /* transition: backdrop-filter 0.3s ease, background 0.3s ease; */
+    transition: all 0.3s ease;
+}
+
+.transparent-background {
+    background-color: transparent;
+    /* 透明 */
+    transition: all 0.3s ease;
+}
+
+.site-name {
+    font-weight: 700;
+    color: rgb(41, 2, 2);
+    font-size: large;
+}
+
+.site-name2 {
+    font-weight: 700;
+    color: rgb(238, 238, 238);
+    font-size: large;
+}
+
+.site-name:hover {
+    font-weight: bold;
+    /* 字体加粗 */
+    color: rgb(73, 177, 245);
+    /* 背景变为黄色 */
+    cursor: pointer;
+    /* 鼠标悬浮时显示为手型光标 */
+}
+
+.site-name2:hover {
+    font-weight: bold;
+    /* 字体加粗 */
+    color: rgb(255, 252, 252);
+    /* 背景变为黄色 */
+    cursor: pointer;
+    /* 鼠标悬浮时显示为手型光标 */
+}

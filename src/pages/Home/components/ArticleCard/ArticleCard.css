@@ -1,0 +1,125 @@
+.card {
+    width: 100%;
+    /* 卡片宽度自适应 */
+    max-width: 850px;
+    /* box-sizing: border-box; */
+    /* height: 235px; */
+    /* min-width: 300px; */
+    /* 最大宽度限制 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    /* 平滑过渡效果 */
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* 默认阴影 */
+    display: flex;
+    /* 使用Flexbox实现水平布局 */
+    align-items: center;
+    /* 垂直居中 */
+    /* padding: 16px; */
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* 悬停时的阴影 */
+}
+
+.card-content {
+    display: flex;
+    /* 使用Flexbox实现水平布局 */
+    align-items: center;
+    /* 垂直居中 */
+    width: 100%;
+    /* 占据整个卡片宽度 */
+    flex-direction: row;
+}
+
+.card-content-reverse {
+    display: flex;
+    /* 使用Flexbox实现水平布局 */
+    align-items: center;
+    /* 垂直居中 */
+    width: 100%;
+    /* 占据整个卡片宽度 */
+    flex-direction: row-reverse;
+}
+
+.card-image-container {
+    width: 45%;
+    /* 图片容器宽度占卡片的45% */
+    height: 235px;
+    /* 图片高度固定为235px */
+    overflow: hidden;
+    /* 防止图片超出容器 */
+    position: relative;
+    /* 相对定位 */
+}
+
+.card-image {
+    width: 100%;
+    /* 图片宽度自适应 */
+    height: 100%;
+    /* 图片高度自适应 */
+    object-fit: cover;
+    /* 裁剪图片以填充容器 */
+    transition: transform 0.6s ease;
+    /* 平滑过渡效果 */
+}
+
+.card-image-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card:hover .card-image {
+    transform: scale(1.1);
+    cursor: pointer;
+    /* 鼠标悬停时放大图片 */
+}
+
+.card-text {
+    flex: 1;
+    /* 文字部分占据剩余空间 */
+    padding: 40px;
+    /* 文字和图片之间的间距 */
+}
+
+.card-title {
+    /* margin: 0 0 8px; */
+    font-size: 1.25rem;
+    color: rgb(56, 69, 83);
+    transition: color 0.8s ease;
+}
+
+.card-information {
+    font-size: 0.7875rem;
+    color: #aeaeae;
+    padding: 0.375rem 0;
+}
+
+.card-title:hover {
+    color: rgb(78, 179, 245);
+    transition: color 0.8s ease;
+    cursor: pointer;
+}
+
+.card-description {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #4c4948;
+}
+
+
+.card-article-category:hover {
+    color: rgb(78, 179, 245);
+    transition: color 0.3s ease;
+    cursor: pointer;
+}

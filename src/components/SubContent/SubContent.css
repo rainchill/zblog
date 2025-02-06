@@ -1,0 +1,37 @@
+.subcontent-container {
+    display: flex;
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中（如果需要） */
+    /* height: 100vh; */
+    /* 示例高度，可根据需要调整 */
+    padding: 20px;
+    /* 确保内容不会紧贴边缘 */
+}
+
+.subcontent-card-container {
+    display: flex;
+    gap: 12px;
+    /* 组件之间的间距 */
+    max-width: 1170px;
+    /* 确保最大宽度为 850px + 300px + 20px（间距） */
+    width: 100%;
+    /* 确保父容器宽度自适应 */
+    margin: 0 auto;
+    /* 水平居中 */
+}
+
+.subcontent-card-wrapper {
+    flex: 3;
+    /* 占据 3 份宽度 */
+    max-width: 850px;
+    /* 最大宽度限制 */
+}
+
+.subcontent-author-card-wrapper {
+    flex: 1;
+    /* 占据 1 份宽度 */
+    max-width: 300px;
+    /* 最大宽度限制 */
+}

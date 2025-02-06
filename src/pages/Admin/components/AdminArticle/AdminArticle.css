@@ -1,0 +1,4 @@
+.ant-table-tbody>tr>td {
+    text-align: center;
+    /* 设置所有单元格的字体居中 */
+}

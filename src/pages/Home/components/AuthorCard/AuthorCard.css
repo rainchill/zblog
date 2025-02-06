@@ -1,0 +1,165 @@
+.AuthorCard {
+    width: 100%;
+    /* 卡片黏住效果 */
+    position: sticky;
+    top: 12px;
+    /* 平滑过渡效果 */
+    transition: top 0.3s ease-in-out;
+    /* 确保卡片在其他内容之上 */
+    z-index: 10;
+    max-width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 16px;
+    /* margin: 16px auto; */
+    box-sizing: border-box;
+    display: flex;
+}
+
+.AuthorCard:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.AuthorCard-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.AuthorCard-image-container {
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.AuthorCard-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    animation: rotateReverse 0.5s linear forwards;
+}
+
+.AuthorCard-image:hover {
+    animation: rotate 0.5s linear forwards;
+}
+
+
+/* .AuthorCard:hover .AuthorCard-image {
+    animation: rotate 0.6s linear forwards;
+} */
+
+/* .AuthorCard:hover .AuthorCard-image:hover {
+    animation: rotateReverse 0.6s linear forwards;
+} */
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateReverse {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.AuthorCard-text {
+    text-align: center;
+    width: 100%;
+    /* padding: 0 16px; */
+    /* flex-direction: column; */
+}
+
+.AuthorCard-title {
+    font-size: 1.25rem;
+    color: rgb(56, 69, 83);
+    transition: color 0.8s ease;
+}
+
+/* .AuthorCard-title:hover {
+    color: rgb(78, 179, 245);
+    cursor: pointer;
+} */
+
+.AuthorCard-description {
+    /* margin: 2px; */
+    display: flex;
+    width: 100%;
+    /* 容器宽度自适应 */
+    max-width: 600px;
+    /* 最大宽度限制 */
+    font-size: 0.9rem;
+    color: #4c4948;
+    padding: 6px;
+    /* 水平居中对齐容器内的所有内容 */
+    justify-content: center;
+}
+
+.AuthorCard-information {
+    margin: 8px;
+    transition: color 0.5s ease;
+}
+
+.AuthorCard-information:hover {
+    color: rgb(78, 179, 245);
+    cursor: pointer;
+}
+
+.AuthorCard-custom-button {
+    margin-top: 6px;
+    /* 基本样式 */
+    background-color: rgb(73, 177, 245);
+    /* 蓝色背景 */
+    color: rgb(255, 255, 255);
+    /* 白色文字 */
+    border: none;
+    /* 无边框 */
+    padding: 0 16px;
+    /* 内边距 */
+    height: 36px;
+    /* 按钮高度 */
+    line-height: 36px;
+    /* 行高与按钮高度一致，确保文字垂直居中 */
+    font-size: 14px;
+    /* 字体大小 */
+    cursor: pointer;
+    /* 鼠标指针样式 */
+    border-radius: 4px;
+    /* 圆角边框 */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* 平滑过渡效果 */
+}
+
+/* 悬停效果 */
+.AuthorCard-custom-button:hover {
+    background-color: rgb(255, 114, 66);
+    /* 悬停时背景颜色变为橙色 */
+    /* color: rgb(255, 255, 255); */
+    /* 悬停时文字颜色保持白色 */
+}
+
+/* 按钮按下效果 */
+.AuthorCard-custom-button:active {
+    background-color: #e06c00;
+    /* 按下时背景颜色更深的橙色 */
+    /* color: white; */
+    /* 按下时文字颜色保持白色 */
+}

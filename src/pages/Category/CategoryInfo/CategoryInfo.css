@@ -1,0 +1,124 @@
+.category-card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+    /* 添加过渡效果 */
+}
+
+.category-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* 定义列表的基本样式 */
+.custom-list {
+    list-style: none;
+    /* 去掉默认的列表样式 */
+    padding: 0;
+    /* 去掉默认的内边距 */
+    margin: 0;
+    /* 去掉默认的外边距 */
+    font-family: 'Roboto', sans-serif;
+    /* 使用更现代的字体 */
+    background: #ffffff;
+    /* 背景颜色 */
+    border-radius: 12px;
+    /* 添加圆角 */
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+    /* 添加阴影 */
+    overflow: hidden;
+    /* 隐藏溢出部分 */
+}
+
+/* 定义列表项的样式 */
+.custom-list li {
+    display: flex;
+    /* 使用 Flexbox 布局 */
+    align-items: center;
+    /* 垂直居中对齐 */
+    padding: 15px 20px;
+    /* 增加内边距 */
+    border-bottom: 1px solid #ddd;
+    /* 添加分割线 */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* 添加过渡效果 */
+}
+
+/* 定义列表项内容的样式 */
+.list-item-content {
+    display: flex;
+    /* 使用 Flexbox 布局 */
+    justify-content: space-between;
+    /* 水平方向上两端对齐 */
+    align-items: center;
+    /* 垂直居中对齐 */
+    width: 100%;
+    /* 占据整个列表项的宽度 */
+}
+
+/* 定义链接的样式 */
+.custom-list a {
+    text-decoration: none;
+    /* 去掉下划线 */
+    color: #333;
+    /* 设置链接颜色 */
+    font-weight: bold;
+    /* 设置字体加粗 */
+    font-size: 16px;
+    /* 设置字体大小 */
+    flex: 1;
+    /* 让链接占据剩余空间 */
+    text-align: center;
+    /* 文字居中对齐 */
+    transition: color 0.3s ease;
+    /* 添加颜色过渡效果 */
+}
+
+/* 定义计数器的样式 */
+.custom-list span {
+    color: #888;
+    /* 设置计数器颜色 */
+    font-weight: normal;
+    /* 设置字体正常 */
+    font-size: 14px;
+    /* 设置字体大小 */
+    background: #f0f0f0;
+    /* 设置背景颜色 */
+    padding: 6px 12px;
+    /* 增加内边距 */
+    border-radius: 10px;
+    /* 增加圆角 */
+    margin-left: 10px;
+    /* 添加左边距 */
+    border: 1px solid #ddd;
+    /* 添加边框 */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* 添加背景和颜色过渡效果 */
+}
+
+/* 定义鼠标悬浮时的样式 */
+.custom-list li:hover {
+    background-color: #f5f5f5;
+    /* 设置悬浮背景色 */
+    transform: scale(1.02);
+    /* 添加轻微的放大效果 */
+}
+
+/* 定义鼠标悬浮时链接和计数器的字体颜色 */
+.custom-list li:hover a {
+    color: #007bff;
+    /* 设置悬浮时的字体颜色为蓝色 */
+}
+
+.custom-list li:hover span {
+    background-color: #e0e0e0;
+    /* 设置悬浮时的背景颜色 */
+    color: #007bff;
+    /* 设置悬浮时的字体颜色为蓝色 */
+}
+
+/* 定义鼠标悬浮时的背景渐变 */
+.custom-list li:hover {
+    background: linear-gradient(135deg, #f5f5f5, #ffffff);
+    /* 添加渐变背景 */
+}
