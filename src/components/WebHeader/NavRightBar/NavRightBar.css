@@ -1,0 +1,95 @@
+.home-page-container {
+    display: flex;
+    align-items: center;
+    /* 垂直居中 */
+    justify-content: center;
+    /* 水平居中 */
+    gap: 6px;
+    /* 图标和文字之间的间距 */
+    /* padding: 10px; */
+    /* border: 1px solid #ccc; */
+    /* border-radius: 4px; */
+    /* background-color: #f0f0f0; */
+    cursor: pointer;
+    /* 鼠标悬停时显示手型光标 */
+    transition: background-color 0.3s, color 0.3s;
+    /* 平滑过渡效果 */
+}
+
+.home-text {
+    /* font-size: 16px;
+    color: #333; */
+    transition: color 0.3s;
+    /* 文字颜色过渡效果 */
+
+    font-weight: 600;
+    color: rgb(41, 2, 2);
+    font-size: small;
+}
+
+.home-page-container:hover .home-text {
+    /* color: #1890ff; */
+    /* 文字颜色变化 */
+    font-weight: bold;
+    /* 字体加粗 */
+    color: rgb(73, 177, 245);
+    /* 背景变为黄色 */
+    /* cursor: pointer; */
+    /* 鼠标悬浮时显示为手型光标 */
+}
+
+.home-text2 {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(238, 238, 238);
+    font-size: small;
+    transition: color 0.3s;
+}
+
+.home-page-container:hover .home-text2 {
+    color: rgb(255, 252, 252);
+    /* 背景变为黄色 */
+    cursor: pointer;
+    /* 鼠标悬浮时显示为手型光标 */
+    transition: color 0.3s;
+}
+
+.home-icon {
+    font-size: 16px;
+    color: rgb(238, 238, 238);
+    transition: color 0.3s;
+    /* 图标颜色过渡效果 */
+}
+
+.home-icon:hover {
+    font-size: 16px;
+    color: rgb(255, 252, 252);
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.home-icon2:hover {
+    font-size: 16px;
+    color: rgb(73, 177, 245);
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.home-page-container:hover .home-icon {
+    font-size: 16px;
+    color: rgb(255, 252, 252);
+    transition: color 0.3s;
+}
+
+.home-icon2 {
+    font-size: 16px;
+    color: rgb(41, 2, 2);
+    transition: color 0.3s;
+    /* 图标颜色过渡效果 */
+}
+
+.home-page-container:hover .home-icon2 {
+    font-size: 16px;
+    color: rgb(73, 177, 245);
+    transition: color 0.3s;
+}

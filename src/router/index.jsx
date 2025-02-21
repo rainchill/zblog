@@ -4,13 +4,12 @@ import AdminArticle from '@/pages/Admin/components/AdminArticle'
 import AdminHome from '@/pages/Admin/components/AdminHome'
 import Admin from '@/pages/Admin'
 import Article from '@/pages/Article'
-import ArticleCardList from '@/pages/Home/components/ArticleCardList'
 import Category from '@/pages/Category'
 import PrivateRoute from './PrivateRoute'
-import { createBrowserRouter, createHashRouter } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom'
 import CategoryInfo from '@/pages/Category/CategoryInfo'
 import CategoryDetail from '@/pages/Category/CategoryDetail'
-
+import Test from '@/Test/Test'
 
 const router = createBrowserRouter([
     {
@@ -56,6 +55,10 @@ const router = createBrowserRouter([
                 element: <CategoryDetail />
             }
         ]
+    },
+    {
+        path: '/test',
+        element: <Test />
     }
 ])
 

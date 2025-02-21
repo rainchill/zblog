@@ -1,4 +1,3 @@
-import WebHeader from '@/components/WebHeader/WebHeader';
 import { Layout, Card } from 'antd';
 import { config } from '@/config';
 

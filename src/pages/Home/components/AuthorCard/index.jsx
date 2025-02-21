@@ -1,33 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import { Skeleton, Button, Flex, Row, Col } from 'antd';
+import { useState, useEffect } from 'react';
+import { Skeleton, Row, Col } from 'antd';
 import './AuthorCard.css';
-import { CalendarOutlined, InboxOutlined, MessageOutlined, GithubOutlined } from '@ant-design/icons';
+import { GithubOutlined } from '@ant-design/icons';
 import loadingGif from '@/assets/images/loading.gif'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAuthor } from '@/store/modules/homeStore';
+import { useNavigate } from 'react-router-dom';
 
-
-const AuthorCardInfo = () => {
+const AuthorCardInfo = ({ author }) => {
+    const navigate = useNavigate();
     // 文章 标签 分类
     return (
         <>
             <Row gutter={[8, 8]}>
                 <Col span={8}>
-                    <div className="AuthorCard-information">
+                    <div className="AuthorCard-information" onClick={() => { navigate('/') }}>
                         <div> 文章</div>
-                        <div>343</div>
+                        <div>{author.totalArticles}</div>
                     </div>
                 </Col>
                 <Col span={8}>
                     <div className="AuthorCard-information">
                         <div> 标签</div>
-                        <div>343</div>
+                        <div>{author.totalCategories}</div>
                     </div>
                 </Col>
                 <Col span={8}>
-                    <div className="AuthorCard-information">
+                    <div className="AuthorCard-information" onClick={() => { navigate('/category') }}>
                         <div> 分类</div>
-                        <div>343</div>
+                        <div>{author.totalTags}</div>
                     </div>
                 </Col>
             </Row>
@@ -61,25 +62,26 @@ const AuthorCardLoading = () => {
 
 const AuthorCardLoaded = () => {
     const { author } = useSelector((state) => state.home)
+    const navigate = useNavigate();
 
     return (
         <>
             <div className="AuthorCard-content">
                 <div className="AuthorCard-image-container">
                     <img
-                        src={author?.avatar}
+                        src={author.avatar}
                         alt="Author Image"
                         className="AuthorCard-image"
                     />
                 </div>
                 <div className="AuthorCard-text">
                     {/* <div className="AuthorCard-title">{title}</div> */}
-                    <div className="AuthorCard-title">Zhongyh</div>
+                    <div className="AuthorCard-title">{author.name}</div>
                     <div className="AuthorCard-description">
                         {author.description}
                     </div>
-                    <AuthorCardInfo />
-                    <button className="AuthorCard-custom-button">
+                    <AuthorCardInfo author={author} />
+                    <button className="AuthorCard-custom-button" onClick={() => window.open(author.link)}>
                         <GithubOutlined />
                         &nbsp;主题 GitHub
                     </button>

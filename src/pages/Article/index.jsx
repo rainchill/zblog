@@ -10,7 +10,8 @@ import './Article.css';
 import Page from './Page'; // 确保正确引入 Page 组件
 import SubContent from '@/components/SubContent/SubContent';
 import WebFooter from '../Home/WebFooter';
-import axios from 'axios';
+import WebHeader from '@/components/WebHeader';
+import Comments from '@/components/Comments';
 
 const { Header, Content, Footer } = Layout;
 
@@ -30,74 +31,10 @@ const Article = () => {
         dispatch(fetchArticleInfo(id))
     }, [id])
 
-    // 监听滚动事件
-    useEffect(() => {
-        const handleTransparent = () => {
-            const currentScrollY = window.scrollY;
-            if (currentScrollY < 128) {
-                setIsTransparent(true);
-            } else {
-                setIsTransparent(false);
-            }
-        };
-
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY; // 当前滚动位置
-            const isScrollingUp = currentScrollY < lastScrollY.current; // 判断是否向上滚动
-
-            // 如果向上滚动且 Header 已隐藏，则显示 Header
-            if (isScrollingUp && isHidden) {
-                setIsHidden(false);
-            }
-            // 如果向下滚动且 Header 可见，则隐藏 Header
-            else if (!isScrollingUp && !isHidden) {
-                setIsHidden(true);
-            }
-            handleTransparent();
-
-            // 更新上一次滚动位置
-            lastScrollY.current = currentScrollY;
-        };
-        // 添加滚动事件监听
-        window.addEventListener("scroll", handleScroll);
-
-        // 清理事件监听
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, [isHidden, isTransparent]);
-
     return (
         <>
             <Layout>
-                <Header
-                    className={classNames({
-                        "transparent-background": isTransparent,
-                        "glass-effect": !isTransparent
-                    })}
-                    style={{
-                        position: "fixed",
-                        top: isHidden ? "-64px" : 0, // 根据状态动态调整 Header 位置
-                        width: "100%",
-                        zIndex: 1000,
-                        padding: "0 36px"
-                    }}
-                >
-                    <Row justify="start">
-                        <Col flex={4} align="start">
-                            <span className={classNames({
-                                "site-name": !isTransparent,
-                                "site-name2": isTransparent,
-                                "no-select": true
-                            })} onClick={() => {
-                                navigate('/')
-                            }}>Butterfly</span>
-                        </Col>
-                        <Col flex={3} align="center">
-                            <NavRightBar isTransparent={isTransparent} />
-                        </Col>
-                    </Row>
-                </Header>
+                <WebHeader />
                 <Content>
                     <div>
                         <div className="article-image-container">

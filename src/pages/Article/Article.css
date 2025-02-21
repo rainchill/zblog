@@ -316,10 +316,24 @@
 /* Article.css */
 .markdown-card {
     margin: 20px 0;
-    padding: 20px;
+    padding: 24px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* 其他样式保持不变 */
+
+
+@media screen and (max-width:768px) {
+    .markdown-card {
+        padding: 5px;
+    }
+}
+
+
+.markdown-content {
+    letter-spacing: normal;
+    font-size: 16px;
+    line-height: 1.6;
+}

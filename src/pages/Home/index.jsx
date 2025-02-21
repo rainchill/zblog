@@ -14,7 +14,7 @@ import ArticleCardList from "./components/ArticleCardList";
 import { fetchHomeInfo } from "@/store/modules/homeStore";
 import { updatePage } from "@/store/modules/homeStore";
 import { useNavigate } from "react-router-dom";
-import WebHeader from "@/components/WebHeader/WebHeader";
+import WebHeader from "@/components/WebHeader";
 import SubContent from "@/components/SubContent/SubContent";
 import WebFooter from "./WebFooter";
 import bgImg from '@/assets/images/bg.jpg'

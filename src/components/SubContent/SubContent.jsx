@@ -1,5 +1,7 @@
 import AuthorCard from "@/pages/Home/components/AuthorCard";
 import { useEffect, useState } from "react";
+import { Row, Col } from "antd";
+
 import './SubContent.css'
 
 const SubContent = ({ children }) => {

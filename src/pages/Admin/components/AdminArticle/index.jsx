@@ -170,7 +170,7 @@ const AdminArticle = () => {
                     ...rest,
                     key: _id
                 }
-                console.log('newData=', newData);
+                // console.log('newData=', newData);
                 setDataSource([...dataSource, newData]); // 添加到数据源
                 setIsModalOpen(false); // 关闭模态框
                 setTotal(total + 1);

@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { Card } from 'antd';
+import { Card, Divider } from 'antd';
+import Comments from '@/components/Comments';
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { useParams, useLocation } from 'react-router-dom';
 import 'github-markdown-css/github-markdown.css';
 import './Article.css'; // 确保引入了 Article.css
 import { config } from '@/config';
 
 const Page = ({ info }) => {
-    const { id } = useParams(); // 获取路径参数 id
-    const location = useLocation();
-    const { state } = location; // 获取传递的参数
     const [fileData, setFileData] = useState("");
     const [error, setError] = useState(null);
 
@@ -62,11 +59,13 @@ const Page = ({ info }) => {
         <Card
             bordered={true}
             style={{ width: '100%', margin: '0' }}
+            styles={{ body: { padding: 0 } }}
             className="markdown-card"
         >
-            {error && <div className="error">{error}</div>} {/* 显示错误信息 */}
+            {error && <div className="error">{error}</div>}
             {fileData && (
                 <ReactMarkdown
+                    className='markdown-content'
                     remarkPlugins={[remarkGfm]}
                     rehypePlugins={[rehypeRaw]}
                     components={{
@@ -93,6 +92,14 @@ const Page = ({ info }) => {
                     {fileData}
                 </ReactMarkdown>
             )}
+            <Divider
+                style={{
+                    borderColor: '#bdc3c7',
+                    borderWidth: '2px',
+                    margin: '40px 0',
+                }}
+            />
+            <Comments />
         </Card>
     );
 };

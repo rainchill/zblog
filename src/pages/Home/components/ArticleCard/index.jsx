@@ -70,6 +70,30 @@ const ArticleCard = ({ info, reverse = false }) => {
                     </div>
                 </div>
             </div>
+
+
+            <div className='card-mobile'>
+                <div className='card-content-mobile'>
+                    <div className='card-image-container-mobile'>
+                        <img
+                            src={info.cover}
+                            alt="Card Image"
+                            className="card-image"
+                            onLoad={handleImageLoad}
+                            onClick={() => {
+                                navToArticle(info, navigate)
+                            }}
+                        />
+                    </div>
+                    <div className='card-text-mobile'>
+                        <div className="card-title-mobile" onClick={() => {
+                            navToArticle(info, navigate)
+                        }}>{info.title}</div>
+                        <div className="card-information-mobile"><ArticleInfo info={info} /></div>
+                        <div className="card-description">{info.description}</div>
+                    </div>
+                </div>
+            </div>
         </>
     );
 };

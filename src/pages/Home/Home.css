@@ -97,7 +97,7 @@
 .responsive-image {
     width: 100%;
     /* 图片宽度自适应容器 */
-    height: 911px;
+    height: 100hv;
     /* 固定高度 */
     object-fit: cover;
     /* 裁剪图片以适应容器 */

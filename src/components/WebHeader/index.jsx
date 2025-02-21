@@ -1,15 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 import { Col, Flex, Layout, Menu, Row } from 'antd';
 import classNames from 'classnames';
-import NavRightBar from '@/pages/Home/components/NavRightBar';
-import { fetchHomeInfo } from "@/store/modules/homeStore";
-import { updatePage } from "@/store/modules/homeStore";
-import { config } from '@/config';
+import { NavRightBar, NavRightBarMobile } from './NavRightBar';
 import './WebHeader.css'
-
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -21,13 +16,6 @@ const WebHeader = () => {
     const [showAuthorCard, setShowAuthorCard] = useState(true);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const { cardList, totalPages } = useSelector((state) => state.home);
-
-    // console.log('img:', config.categoryBgImg)
-    // useEffect(() => {
-    //     // 从后端获取首页json数据
-    //     dispatch(fetchHomeInfo())
-    // }, [])
 
     // 监听滚动事件
     useEffect(() => {
@@ -44,19 +32,22 @@ const WebHeader = () => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY // 当前滚动位置
             const isScrollingUp = currentScrollY < lastScrollY.current // 判断是否向上滚动
-            // console.log('now Y=', currentScrollY)
-            // 如果向上滚动且 Header 已隐藏，则显示 Header
-            if (isScrollingUp && isHidden) {
-                setIsHidden(false);
-            }
-            // 如果向下滚动且 Header 可见，则隐藏 Header
-            else if (!isScrollingUp && !isHidden) {
-                setIsHidden(true);
-            }
-            handleTransparent()
+            if (currentScrollY !== 0 || lastScrollY.current !== 0) {
+                // console.log('debug currentScrollY:', currentScrollY, 'lastScrollY:', lastScrollY.current);
 
-            // 更新上一次滚动位置
-            lastScrollY.current = currentScrollY;
+                // 如果向上滚动且 Header 已隐藏，则显示 Header
+                if (isScrollingUp && isHidden) {
+                    setIsHidden(false);
+                }
+                // 如果向下滚动且 Header 可见，则隐藏 Header
+                else if (!isScrollingUp && !isHidden) {
+                    setIsHidden(true);
+                }
+                handleTransparent()
+
+                // 更新上一次滚动位置
+                lastScrollY.current = currentScrollY;
+            }
         };
         // 添加滚动事件监听
         window.addEventListener("scroll", handleScroll);
@@ -69,7 +60,6 @@ const WebHeader = () => {
 
         // 初始化时检查一次
         handleResize();
-        // console.log('11111111111111111')
 
         // 监听窗口大小变化
         window.addEventListener('resize', handleResize);
@@ -99,22 +89,29 @@ const WebHeader = () => {
                     // backgroundColor: "white"
                 }}
             >
-                <Row justify="start">
+                <Row justify="start" >
                     <Col flex={4} align="start">
                         <span className={classNames({
                             "site-name": !isTransparent,
                             "site-name2": isTransparent,
-                            "no-select": true
                         })} onClick={() => {
                             navigate('/')
-                        }}>Butterfly</span>
+                        }}>ZBlog</span>
                     </Col>
                     <Col flex={3} align="center">
-                        <NavRightBar isTransparent={isTransparent} />
+                        <div>
+                            <div className="web-navrightbar">
+                                <NavRightBar isTransparent={isTransparent} />
+                            </div>
+                            <div className="mobile-navrightbar">
+                                <NavRightBarMobile isTransparent={isTransparent} />
+                            </div>
+                        </div>
                     </Col>
                 </Row>
             </Header>
         </>
     )
 };
+
 export default WebHeader;

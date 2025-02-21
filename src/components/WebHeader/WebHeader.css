@@ -52,3 +52,25 @@
     cursor: pointer;
     /* 鼠标悬浮时显示为手型光标 */
 }
+
+/* 默认样式 */
+.web-navrightbar {
+    display: block;
+    /* 默认显示 */
+}
+
+.mobile-navrightbar {
+    display: none;
+}
+
+/* 当屏幕宽度小于 768px 时 */
+@media screen and (max-width: 768px) {
+    .web-navrightbar {
+        display: none;
+        /* 隐藏 */
+    }
+
+    .mobile-navrightbar {
+        display: block;
+    }
+}
