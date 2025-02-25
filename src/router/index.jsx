@@ -9,7 +9,7 @@ import PrivateRoute from './PrivateRoute'
 import { createBrowserRouter } from 'react-router-dom'
 import CategoryInfo from '@/pages/Category/CategoryInfo'
 import CategoryDetail from '@/pages/Category/CategoryDetail'
-import Test from '@/Test/Test'
+// import Test from '@/Test/Test'
 
 const router = createBrowserRouter([
     {
@@ -56,10 +56,10 @@ const router = createBrowserRouter([
             }
         ]
     },
-    {
-        path: '/test',
-        element: <Test />
-    }
+    // {
+    //     path: '/test',
+    //     element: <Test />
+    // }
 ])
 
 export default router
