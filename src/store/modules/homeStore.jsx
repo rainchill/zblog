@@ -54,7 +54,7 @@ const updatePage = (page) => {
     return async (dispatch) => {
         // console.log('page=', page)
         // const res = await axios.get('http://localhost:3000/api/page/' + page)
-        const res = await axios.get(config.apiUrl + 'page' + page)
+        const res = await axios.get(config.apiUrl + 'page/' + page)
         dispatch(setCardList(res.data.newCardList))
     }
 }
