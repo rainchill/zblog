@@ -22,13 +22,13 @@ const AuthorCardInfo = ({ author }) => {
                 <Col span={8}>
                     <div className="AuthorCard-information">
                         <div> 标签</div>
-                        <div>{author.totalCategories}</div>
+                        <div>{author.totalTags}</div>
                     </div>
                 </Col>
                 <Col span={8}>
                     <div className="AuthorCard-information" onClick={() => { navigate('/category') }}>
                         <div> 分类</div>
-                        <div>{author.totalTags}</div>
+                        <div>{author.totalCategories}</div>
                     </div>
                 </Col>
             </Row>

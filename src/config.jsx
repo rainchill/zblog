@@ -2,7 +2,8 @@ import bgImg from '@/assets/images/bg.jpg';
 import loadingGif from '@/assets/images/loading.gif';
 
 // const url = 'https://blog.uu3k.eu.org/';
-const url = 'http://localhost:3000/';
+const url = 'https://blog.rain9.top/';
+// const url = 'http://localhost:3000/';
 
 const config = {
     avatar: url + 'avatar.jpg',

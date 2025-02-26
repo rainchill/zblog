@@ -3,10 +3,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Col, Flex, Layout, Menu, Row } from 'antd';
 import classNames from 'classnames';
+import { useLocation } from "react-router-dom";
 import { NavRightBar, NavRightBarMobile } from './NavRightBar';
 import './WebHeader.css'
 
 const { Header, Footer, Sider, Content } = Layout;
+
+function ScrollToTop() {
+    const { pathname } = useLocation(); // 获取当前路由路径
+
+    useEffect(() => {
+        window.scrollTo(0, 0); // 每次路径变化时滚动到顶部
+    }, [pathname]); // 依赖 pathname，确保仅在路由变化时触发
+
+    return null; // 该组件不渲染任何内容
+}
 
 const WebHeader = () => {
     const [isHidden, setIsHidden] = useState(false) // 控制 Header 是否隐藏
@@ -40,7 +51,7 @@ const WebHeader = () => {
                     setIsHidden(false);
                 }
                 // 如果向下滚动且 Header 可见，则隐藏 Header
-                else if (!isScrollingUp && !isHidden) {
+                else if (!isScrollingUp && isHidden) {
                     setIsHidden(true);
                 }
                 handleTransparent()
@@ -69,10 +80,11 @@ const WebHeader = () => {
             window.removeEventListener("scroll", handleScroll);
             window.removeEventListener('resize', handleResize);
         };
-    }, [isHidden, isTransparent])
+    }, [])
 
     return (
         <>
+            <ScrollToTop />
             <Header
                 className={classNames({
                     "transparent-background": isTransparent,

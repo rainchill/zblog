@@ -180,7 +180,7 @@ const Comments = () => {
     const { articleInfo } = useSelector((state) => state.home);
     // 存在 bug 非常不优雅的做法... 待优化
     useEffect(() => {
-        console.log('渲染');
+        // console.log('渲染');
         // 按日期降序排序
         if (articleInfo.comments) {
             const newList = articleInfo.comments.slice().sort((a, b) => dayjs(b.date).valueOf() - dayjs(a.date).valueOf());
