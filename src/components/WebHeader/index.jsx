@@ -60,8 +60,19 @@ const WebHeader = () => {
                 lastScrollY.current = currentScrollY;
             }
         };
+
+        function handleScrollThrottled(fn, delay = 500) {
+            let oldTime = 0;
+            return function (...args) {
+                let newTime = Date.now();
+                if (newTime - oldTime >= delay) {
+                    fn.apply(null, args);
+                    oldTime = Date.now();
+                }
+            }
+        }
         // 添加滚动事件监听
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScrollThrottled(handleScroll));
 
 
         const handleResize = () => {
